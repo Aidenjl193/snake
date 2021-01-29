@@ -1,0 +1,175 @@
+html, body {
+    margin: 0;
+}
+
+body {
+    background: linear-gradient(180deg, rgba(254,105,248,1) 5%, rgba(206,150,251,1) 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#controls.playing .play-button, #controls.in-menu .play-button {
+    display: none;
+}
+#controls:not(.playing) .pause-button, #controls:not(.playing) .resume-button {
+    display: none;
+}
+#controls.paused .pause-button {
+    display: none;
+}
+#controls:not(.paused) .resume-button {
+    display: none;
+}
+
+#controls {
+    width: 80vw;
+    margin: auto;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+}
+
+#board {
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    width: 80vw;
+    border: 4px solid white;
+    margin: 20px 10vw;
+    position: relative;
+}
+
+div.row {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+}
+div.col {
+    flex: 1;
+    height: 100%;
+}
+div.col.snake {
+    background: #037a90 !important;
+    border-radius: 30%;
+}
+
+div.col.food {
+    background: #f34a4a;
+}
+
+div#gameOver {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    color: white;
+}
+
+#board h1 {
+    margin: 0;
+    font-size: 90px;
+}
+
+button {
+    background-color: transparent;
+    border-radius: 10px;
+    color: white;
+    border: 2px solid white;
+    font-size: 30px;
+    padding: 10px;
+    width: fit-content;
+    transition-duration: 0.3s;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ffffff29;
+}
+
+div#gameOver div#options {
+    display: flex;
+    justify-content: space-around;
+}
+
+div#gameOver #scoreForm table{
+    width: 90%;
+    margin: auto;
+    table-layout: fixed;
+    font-size: 30px;
+    color: white;
+}
+
+div#gameOver #scoreForm table td{
+    width: 33%;
+}
+
+div#gameOver #scoreForm table input{
+    width: 60%;
+}
+
+#board input {
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+    color: white;
+    border-bottom: 2px solid white;
+    padding: 10px;
+    font-size: 30px;
+}
+
+#board.game-over div#gameOver {
+    backdrop-filter: blur(4px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#board.leaderboard div#leaderboard {
+    backdrop-filter: blur(4px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+div#leaderboard {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    color: white;
+}
+
+div#leaderboard table {
+    width: 100%;
+    font-size: 32px;
+}
+
+#board.welcome div#welcome {
+    backdrop-filter: blur(4px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+div#welcome {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    color: white;
+}

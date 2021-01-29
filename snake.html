@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Snake</title>
+    <script src="snake.js"></script>
+    <link rel="stylesheet" href="snake.css">
+</head>
+<body>
+
+<div id="controls" class="in-menu">
+    <div>
+        <h2>SCORE: <span class="score">0</span></h2>
+    </div>
+    <div>
+        <button class="play-button" onclick="game.play()">Play</button>
+        <button class="pause-button" onclick="game.snake.pause()">Pause</button>
+        <button class="resume-button" onclick="game.snake.move()">Resume</button>
+    </div>
+</div>
+
+<div id="board" class="welcome">
+    <div id="gameOver">
+        <h1>GAME OVER</h1>
+        <form id="scoreForm">
+            <table>
+                <tr>
+                    <th>NAME</th>
+                    <th>SCORE</th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td><input type="text" id="name"></input></td>
+                    <td>
+                        <span id="score-text"></span>
+                    </td>
+                    <td><button>SUBMIT</button></td>
+                </tr>
+            </table>
+        </form>
+        <div id="options">
+            <button onclick="game.restart()">PLAY AGAIN</button>
+            <button onclick="game.showLeaderboard()">LEADERBOARD</button>
+        </div>
+    </div>
+    <div id="leaderboard">
+        <h1>LEADERBOARD</h1>
+        <table>
+        </table>
+        <button onclick="game.restart()">PLAY AGAIN</button>
+    </div>
+    <div id="welcome">
+        <div>
+            <h1>ENTER YOUR API KEY</h1>
+            <form id="apiform">
+                <input type="text" id="key"> </input>
+                <button>ENTER</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<script type="text/javascript">
+    const board = document.getElementById('board');
+    const controls = document.getElementById('controls');
+    const apiform = document.getElementById('apiform');
+    const scoreForm = document.getElementById('scoreForm');
+    const game = new SnakeGame(board, controls, apiform, scoreForm);
+</script>
+
+</body>
+</html>
